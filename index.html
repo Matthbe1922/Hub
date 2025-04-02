@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hub Web</title>
   <link rel="icon" type="image/svg+xml" href="data/image/icon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -15,6 +16,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       height: 100vh;
       overflow: hidden;
     }
@@ -38,6 +40,7 @@
       align-items: center;
       width: 90%;
       max-width: 800px;
+      flex-direction: column;
     }
 
     .grid-container {
@@ -49,6 +52,7 @@
       padding: 20px;
       background: rgba(0, 0, 0, 0.5);
       border-radius: 10px;
+      margin-top: 20px;
     }
 
     .grid-item {
@@ -70,11 +74,74 @@
       max-width: 50px;
       height: auto;
     }
+
+    /* Barra di ricerca Google */
+    .google-search {
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .google-logo {
+      margin-right: 10px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .search-input {
+      width: 500px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #dcdcdc;
+      border-radius: 24px;
+      outline: none;
+      margin-right: 10px;
+    }
+
+    .search-input:focus {
+      border-color: #4285f4;
+    }
+
+    .search-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .search-button svg {
+      fill: #4285f4;
+      width: 24px;
+      height: 24px;
+    }
+
+    .search-button:hover svg {
+      fill: #3367d6;
+    }
   </style>
 </head>
 <body>
-  <div class="background"></div>
+  <div class="background">
+    <img src="https://static.wikia.nocookie.net/starwars/images/2/2c/Starfield.jpg/revision/latest?cb=20210820011702" alt="">
+  </div>
   <div class="container">
+    <div>
+      <img src="https://see.fontimg.com/api/rf5/DGRW/MTNmYjZiN2U1NjRlNDM1MGE1OTgzOWRiZGFmMzgxNTIudHRm/U3RhciBodWI/star-jedi.png?r=fs&h=65&w=1000&fg=F0F90F&bg=FFFFFF&tb=1&s=65" alt="logo">
+    </div>
+    <div class="google-search">
+      <!-- Logo Google -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" alt="Google Logo" class="google-logo">
+      <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q" class="search-input" placeholder="Cerca su Google" required>
+        <button type="submit" class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+            <path d="M23.64 22.64l-5.75-5.75a9.4 9.4 0 0 0 1.46-5.84c0-5.19-4.22-9.4-9.4-9.4S0 6.22 0 11.4s4.22 9.4 9.4 9.4c2.53 0 4.85-.97 6.58-2.59l5.76 5.75 1.45-1.45zm-14.24-5.3c-3.36 0-6.1-2.74-6.1-6.1 0-3.36 2.74-6.1 6.1-6.1 3.36 0 6.1 2.74 6.1 6.1 0 3.36-2.74 6.1-6.1 6.1z"/>
+          </svg>a
+        </button>
+      </form>
+    </div>
+
+    <!-- Griglia di collegamenti -->
     <div class="grid-container" id="gridContainer">
       <a href="http://192.168.1.13:8096/web/#/home.html" class="grid-item">
         <img src="https://camo.githubusercontent.com/b45c346dff70ce88d3cc6d6c58f6484b9ca11230c690efaf11cefd7177a97d5e/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f6a656c6c7966696e2f6a656c6c7966696e2d6d656469612d706c6179657240646136663438373833353762613630613465333638383363306233333638383430333538613337322f7265736f75726365732f696d616765732f69636f6e2e706e67" alt="Jellyfin">
@@ -109,8 +176,14 @@
       <a href="https://discohook.org/?data=eyJtZXNzYWdlcyI6W3siZGF0YSI6eyJjb250ZW50IjoiQGhlcmUiLCJlbWJlZHMiOm51bGwsInVzZXJuYW1lIjoiSmVsbHlmaW4iLCJhdmF0YXJfdXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzQ1Njk4MDMxP3M9MjgwJnY9NCIsImF0dGFjaG1lbnRzIjpbXX19XX0" class="grid-item">
         <img src="data/image/discord-communication-interaction-message-network-svgrepo-com.svg" alt="Discord Webhook 2">
       </a>
-      <a href="https://github.com" class="grid-item">
-        <img src="https://images.seeklogo.com/logo-png/50/2/github-icon-logo-png_seeklogo-503247.png" alt="Gihub">
+      <a href="https://github.com/" class="grid-item">
+        <img src="https://www.svgrepo.com/show/475654/github-color.svg" alt="github">
+      </a>
+      <a href="https://www.reddit.com/" class="grid-item">
+        <img src="https://www.svgrepo.com/show/271111/reddit.svg" alt="Reddit">
+      </a>
+      <a href="https://amazon.it/" class="grid-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="amazon">
       </a>
     </div>
   </div>
